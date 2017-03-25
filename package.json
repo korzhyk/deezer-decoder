@@ -1,0 +1,18 @@
+{
+  "name": "deezer-decoder",
+  "version": "0.0.0-not-a-package",
+  "private": true,
+  "scripts": {
+    "build": "webpack -p --config tools/webpack.config.js",
+    "test": "eslint -c tools/.eslintrc.js src"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.10",
+    "blueimp-md5": "^2.7.0",
+    "egoroof-blowfish": "^1.0.1",
+    "eslint": "^3.16.1",
+    "webpack": "^2.2.1"
+  }
+}
