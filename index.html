@@ -6,8 +6,8 @@
 </head>
 <body>
 <form id="form">
-    Encoded MP3: <input type="file" id="file" accept="audio/mpeg"><br><br>
-    Song ID: <input type="number" min="0" id="songId"><br><br>
+    Encoded MP3: <input type="file" id="file" accept="audio/mpeg" required><br><br>
+    Song ID: <input type="number" min="0" id="songId" required><br><br>
     <button type="submit">Decode</button>
 </form>
 <script src="tools/FileSaver.1.3.3.min.js"></script>
@@ -17,13 +17,9 @@
         e.preventDefault();
         const fileInput = document.getElementById('file');
         const songInput = document.getElementById('songId');
-
-        if (!fileInput.files.length) {
-            console.error('Did you forget to attach a file?');
-            return;
-        }
         const file = fileInput.files[0];
         const reader = new FileReader();
+
         reader.onload = function () {
             decode(reader.result, songInput.value, file.name);
         };
